@@ -1,0 +1,47 @@
+name: Release
+concurrency:
+  group: environment-${{ github.ref }}
+  cancel-in-progress: true
+on:
+  push:
+    branches:
+      - main
+env:
+  POETRY_HTTP_BASIC_PYPI_USERNAME: __token__
+  POETRY_HTTP_BASIC_PYPI_PASSWORD: ${{ secrets.POETRY_HTTP_BASIC_PYPI_PASSWORD }}
+
+jobs:
+  release:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Checkout
+      uses: actions/checkout@v4
+
+    - name: Set up Python
+      uses: actions/setup-python@v5
+      with:
+        python-version: '3.10'
+
+    - name: Run linting and unit tests
+      run: |
+        set -e
+        pip install poetry
+        poetry env use 3.10
+        poetry install
+        poetry run black .
+        poetry run isort .
+        poetry run pylint streamlit_pandera
+        poetry run pytest tests
+
+    - name: Run e2e tests
+      run: |
+        set -e
+        poetry run playwright install
+        poetry run pytest e2e
+
+    - name: Release
+      run: |
+        poetry build
+        poetry run twine check dist/*
+        poetry config pypi-token.pypi $POETRY_HTTP_BASIC_PYPI_PASSWORD
+        poetry publish --no-interaction
