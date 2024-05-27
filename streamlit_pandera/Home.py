@@ -1,7 +1,6 @@
 import streamlit as st
 
-from streamlit_pandera.io_file_validator.validate_file import run_validate_file
-
+from streamlit_pandera.validate_file import run_validate_file
 
 st.set_page_config(
     page_title="Data Validator Home",
