@@ -25,7 +25,7 @@ pip install streamlit-pandera
 ```python
 import streamlit as st
 
-from streamlit_pandera.io_file_validator import run_validate_file
+from  import run_validate_file
 
 
 def validate():

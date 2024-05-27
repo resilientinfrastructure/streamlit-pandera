@@ -4,7 +4,7 @@ from pathlib import Path
 import pytest
 from pandera.errors import SchemaError
 
-from streamlit_pandera.io_file_validator.validator import ValidatorDataframe
+from io_file_validator.validator import ValidatorDataframe
 
 
 def test_validator():

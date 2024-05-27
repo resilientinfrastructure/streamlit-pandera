@@ -5,7 +5,7 @@ import streamlit.components.v1 as components
 import validators
 from pandera.errors import SchemaError
 
-from streamlit_pandera.io_file_validator.validator import ValidatorDataframe
+from io_file_validator.validator import ValidatorDataframe
 
 logger = logging.getLogger(__name__)
 

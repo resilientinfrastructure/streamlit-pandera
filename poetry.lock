@@ -743,6 +743,24 @@ files = [
 ]
 
 [[package]]
+name = "io-file-validator"
+version = "0.1.5"
+description = "File Validator Tool helps you validate your data with a plethora of formats"
+optional = false
+python-versions = "<4.0,>=3.10"
+files = [
+    {file = "io_file_validator-0.1.5-py3-none-any.whl", hash = "sha256:a202802b995d0d59059619b08fb42bd6603fea42bbb734465eb0423ccf9ebcf6"},
+    {file = "io_file_validator-0.1.5.tar.gz", hash = "sha256:b7b7fddaf73fc24146627f37de6505d538c59ef264afd61922a0009bb7dfdc26"},
+]
+
+[package.dependencies]
+pandera = {version = ">=0.7.2,<0.8.0", extras = ["io"]}
+pipx = ">=1.5.0,<2.0.0"
+requests = ">=2.31.0,<3.0.0"
+validators = ">=0.28.1,<0.29.0"
+wheel = "*"
+
+[[package]]
 name = "isodate"
 version = "0.6.1"
 description = "An ISO 8601 date/time/duration parser and formatter"
@@ -2797,4 +2815,4 @@ testing = ["big-O", "jaraco.functools", "jaraco.itertools", "jaraco.test", "more
 [metadata]
 lock-version = "2.0"
 python-versions = "^3.10"
-content-hash = "10205524004c9447b358952cfb14ec9052ebf85affc4925f3d6ace6799126396"
+content-hash = "9e3034baddc0daf85e4821682ba0618818491c5b2010976b6124146cafed3128"
