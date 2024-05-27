@@ -1,7 +1,5 @@
 import streamlit as st
 
-from streamlit_pandera.validate_file import run_validate_file
-
 import logging
 
 import streamlit as st
