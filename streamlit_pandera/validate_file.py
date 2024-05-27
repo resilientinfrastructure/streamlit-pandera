@@ -3,9 +3,8 @@ import logging
 import streamlit as st
 import streamlit.components.v1 as components
 import validators
-from pandera.errors import SchemaError
-
 from io_file_validator.validator import ValidatorDataframe
+from pandera.errors import SchemaError
 
 logger = logging.getLogger(__name__)
 
@@ -41,6 +40,7 @@ def set_panderas_url_from_selectbox(standards):
         st.success(f"Selected {name}, we will validate file against {standard_url}")
         assign_panderas_url(panderas_url=standard_url)
 
+
 def run_validation(validator, uploaded_file):
     try:
         dataframe = validator.run_validation(uploaded_file=uploaded_file)
@@ -53,6 +53,7 @@ def run_validation(validator, uploaded_file):
         )
         return None
     return dataframe
+
 
 def run_validate_file(standards: dict, validator: ValidatorDataframe = None):
     """

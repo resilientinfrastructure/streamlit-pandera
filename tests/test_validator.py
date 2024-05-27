@@ -2,9 +2,8 @@ from io import BytesIO
 from pathlib import Path
 
 import pytest
-from pandera.errors import SchemaError
-
 from io_file_validator.validator import ValidatorDataframe
+from pandera.errors import SchemaError
 
 
 def test_validator():
