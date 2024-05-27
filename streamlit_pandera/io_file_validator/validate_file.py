@@ -47,7 +47,7 @@ def run_validation(validator, uploaded_file):
     except SchemaError as e:
         st.error(
             f"""
-                Please fix file to match expected format in standard defined in URL and try again!!!
+                Please fix file and try again!!!\n\n\n
                 Validation failed with error message: {e}.
             """
         )
