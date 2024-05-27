@@ -11,7 +11,7 @@ def main():
         page_title="Data Validator Home",
         page_icon="📊",
     )
-
+    st.write("# Data Validation Tool! 📊")
     run_validate_file(standards=standards)
     # TODO: DO SOMETHING ELSE WITH VALIDATED_DF
 

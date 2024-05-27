@@ -60,7 +60,6 @@ def run_validate_file(standards: dict, validator: ValidatorDataframe = None):
     e.g.: 'inclinometr': 'https://path/to/panderas/url"""
     if not validator:
         validator = ValidatorDataframe(url=None, file_format="csv")
-    st.write("# Data Validation Tool Using Pandera Yaml Schemas! 📊")
     with st.sidebar:
         components.html(
             """
