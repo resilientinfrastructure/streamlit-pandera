@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "streamlit_pandera"
-version = "0.0.1"
+version = "0.0.2"
 description = "Streamlit Data Validator Tool helps you validate your data with dataframe-type objects"
 authors = ["Manrique Vargas <machomaxg@gmail.com>"]
 readme = "README.md"
